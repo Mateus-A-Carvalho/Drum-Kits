@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Fira+Sans+Condensed:ital@0;1&family=Hedvig+Letters+Serif:opsz@12..24&family=Kalnia:wght@300&family=Kurale&family=Lato:ital,wght@0,700;1,700&family=Lora:ital@1&family=Nanum+Gothic&family=Playpen+Sans:wght@400;700&family=Raleway:ital,wght@0,700;1,800&family=Roboto+Slab:wght@500&family=Ubuntu:ital,wght@0,700;1,400&display=swap');
+
+:root {
+  --box-shadow: 0 0 .8rem rgba(0, 0, 0, .3);
+}
+
+/* Utilily classes */
+.transition-time {
+  transition: all .5s;
+}
+/* Utilily classes */
+
+
 * {
   margin: 0;
   padding: 0;
@@ -18,14 +31,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.8rem;
+}
 
+h1.main-heading {
+  font-size: 3em;
+  font-family: 'Kalnia', serif;
+  text-shadow: var(--box-shadow);
 }
 
 section {
   width: 80%;
   height: auto;
-  padding: 2rem;
-  background-color: rgba(255, 255, 255, .85);
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, .75);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -33,15 +52,30 @@ section {
   border-radius: 1rem;
 }
 
-img {
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  width: 100%;
+  height: auto;
+}
+
+.img-wrapper {
   width: 20rem;
   height: 20rem;
   border-radius: 100%;
   margin: 3rem;
-  object-fit: fill;
   overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  min-height: 100%;
+  object-fit: fill;
 }
 
 img:hover {
   cursor: pointer;
+  transform: scale(1.2);
 }
