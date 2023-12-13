@@ -11,20 +11,17 @@ const drumBassSoundEffectEl = document.querySelector('#drum-bass-sound-effect');
 const hihatCymbalSoundEffectEl = document.querySelector('#hihat-cymbal-sound-effect');
 const snareDrumSoundEffectEl = document.querySelector('#snare-drum-sound-effect');
 const rideCymbalSoundEffectEl = document.querySelector('#ride-cymbal-sound-effect');
-const tomDrumSoundEffectEl = document.querySelector('#tom-drum-sound-effect');
+const tomDrumSoundEffectEl = document.querySelector('#tom-sound-effect');
 const attackCymbalSoundEffectEl = document.querySelector('#attack-cymbal-sound-effect');
 const floorTomSoundEffectEl = document.querySelector('#floor-tom-sound-effect');
 
-console.log(drumBassSoundEffectEl)
 
 document.addEventListener("click", (e) => {
-  console.log(e.target);
+  const elementTarget = e.target;
+  
+  if(elementTarget === drumBassEl) return playSoundEffect(drumBassSoundEffectEl);
 })
 
-function playDrumBass () {}
-function playHihatCymbal () {}
-function playSnareDrum () {}
-function playRideCymbal () {}
-function playTomDrum () {}
-function playAttackCymbal () {}
-function playFloorTom () {}
+function playSoundEffect (audioElement) {
+  return audioElement.play(); 
+}
