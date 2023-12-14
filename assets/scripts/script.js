@@ -3,7 +3,7 @@ const hihatCymbalEl = document.querySelector('#hihat-cymbal');
 const snareDrumEl = document.querySelector('#snare-drum');
 const rideCymbalEl = document.querySelector('#ride-cymbal');
 const tomDrumEl = document.querySelector('#tom-drum');
-const attackCymbalEl = document.querySelector('#attack-cymbal');
+const crashCymbalEl = document.querySelector('#crash-cymbal');
 const floorTomEl = document.querySelector('#floor-tom');
 
 // Const with sound effects
@@ -12,7 +12,7 @@ const hihatCymbalSoundEffectEl = document.querySelector('#hihat-cymbal-sound-eff
 const snareDrumSoundEffectEl = document.querySelector('#snare-drum-sound-effect');
 const rideCymbalSoundEffectEl = document.querySelector('#ride-cymbal-sound-effect');
 const tomDrumSoundEffectEl = document.querySelector('#tom-sound-effect');
-const attackCymbalSoundEffectEl = document.querySelector('#attack-cymbal-sound-effect');
+const crashCymbalSoundEffectEl = document.querySelector('#crash-cymbal-sound-effect');
 const floorTomSoundEffectEl = document.querySelector('#floor-tom-sound-effect');
 
 
@@ -24,10 +24,19 @@ document.addEventListener("click", (e) => {
   if(elementTarget === snareDrumEl) return playSoundEffect(snareDrumSoundEffectEl);
   if(elementTarget === rideCymbalEl) return playSoundEffect(rideCymbalSoundEffectEl);
   if(elementTarget === tomDrumEl) return playSoundEffect(tomDrumSoundEffectEl);
-  if(elementTarget === attackCymbalEl) return playSoundEffect(attackCymbalSoundEffectEl);
+  if(elementTarget === crashCymbalEl) return playSoundEffect(crashCymbalSoundEffectEl);
   if(elementTarget === floorTomEl) return playSoundEffect(floorTomSoundEffectEl);
 })
 
-function playSoundEffect (audioElement) {
-  audioElement.play(); 
-}
+document.addEventListener("keydown", (e) => {
+  console.log(e);
+  if(e.code === "KeyD") return playSoundEffect(drumBassSoundEffectEl);
+  if(e.code === "KeyH") return playSoundEffect(hihatCymbalSoundEffectEl);
+  if(e.code === "KeyS") return playSoundEffect(snareDrumSoundEffectEl);
+  if(e.code === "KeyR") return playSoundEffect(rideCymbalSoundEffectEl);
+  if(e.code === "KeyT") return playSoundEffect(tomDrumSoundEffectEl);
+  if(e.code === "KeyC") return playSoundEffect(crashCymbalSoundEffectEl);
+  if(e.code === "KeyF") return playSoundEffect(floorTomSoundEffectEl);
+})
+
+const playSoundEffect = audioElement => audioElement.play()
