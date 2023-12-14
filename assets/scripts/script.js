@@ -1,9 +1,9 @@
-const drumBassEl = document.querySelector('#drum-bass');
+const drumBassEl = document.querySelector('#bass-drum');
 const hihatCymbalEl = document.querySelector('#hihat-cymbal');
 const snareDrumEl = document.querySelector('#snare-drum');
 const rideCymbalEl = document.querySelector('#ride-cymbal');
 const tomDrumEl = document.querySelector('#tom-drum');
-const attackCymbalEl = document.querySelector('#drum-bass');
+const attackCymbalEl = document.querySelector('#attack-cymbal');
 const floorTomEl = document.querySelector('#floor-tom');
 
 // Const with sound effects
@@ -20,8 +20,14 @@ document.addEventListener("click", (e) => {
   const elementTarget = e.target;
   
   if(elementTarget === drumBassEl) return playSoundEffect(drumBassSoundEffectEl);
+  if(elementTarget === hihatCymbalEl) return playSoundEffect(hihatCymbalSoundEffectEl);
+  if(elementTarget === snareDrumEl) return playSoundEffect(snareDrumSoundEffectEl);
+  if(elementTarget === rideCymbalEl) return playSoundEffect(rideCymbalSoundEffectEl);
+  if(elementTarget === tomDrumEl) return playSoundEffect(tomDrumSoundEffectEl);
+  if(elementTarget === attackCymbalEl) return playSoundEffect(attackCymbalSoundEffectEl);
+  if(elementTarget === floorTomEl) return playSoundEffect(floorTomSoundEffectEl);
 })
 
 function playSoundEffect (audioElement) {
-  return audioElement.play(); 
+  audioElement.play(); 
 }
