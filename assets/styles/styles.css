@@ -93,7 +93,7 @@ img {
 
 h2.img-heading {
   width: 100%;
-  /* display: none; */
+  visibility: hidden;
   text-align: center;
   position: absolute;
   top: 50%;
@@ -104,6 +104,7 @@ h2.img-heading {
   user-select: none;
   cursor: pointer;
   opacity: .75;
+  border-radius: 1rem;
 }
 
 img:hover {
@@ -112,12 +113,15 @@ img:hover {
   filter: blur(.5rem);
 }
 
+img:active {
+  transform: scale(.95);
+}
+
 h2.img-heading:hover ~ img {
   cursor: pointer;
   transform: scale(1.1);
   filter: blur(.5rem);
 }
-
 
 /* Key-frames */
 
@@ -142,7 +146,7 @@ h2.img-heading:hover ~ img {
   100% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
-    opacity: 1;
+    opacity: .75;
   }
 }
 
@@ -153,8 +157,8 @@ h2.img-heading:hover ~ img {
     opacity: 1;
   }
   100% {
-    -webkit-transform: translateX(1000px);
-            transform: translateX(1000px);
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
     opacity: 0;
   }
 }
@@ -162,11 +166,11 @@ h2.img-heading:hover ~ img {
   0% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
-    opacity: 1;
+    opacity: .75;
   }
   100% {
-    -webkit-transform: translateX(1000px);
-            transform: translateX(1000px);
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
     opacity: 0;
   }
 }

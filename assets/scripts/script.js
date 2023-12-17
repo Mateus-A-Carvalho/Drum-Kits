@@ -15,6 +15,27 @@ const tomDrumSoundEffectEl = document.querySelector('#tom-sound-effect');
 const crashCymbalSoundEffectEl = document.querySelector('#crash-cymbal-sound-effect');
 const floorTomSoundEffectEl = document.querySelector('#floor-tom-sound-effect');
   
+const nodeListHeadingsEl = document.querySelectorAll('.img-heading');
+const nodeListImgEl = document.querySelectorAll('.drum-tool');
+
+nodeListImgEl.forEach((imgElement) => {
+  const imgId = imgElement.id;
+  const headingDataId = document.querySelector(`.img-heading[data-img-id=${imgId}]`);
+
+  imgElement.addEventListener("mouseover", () => {
+    headingDataId.style.visibility = `visible`;
+    headingDataId.classList.add('slide-in-right');
+    headingDataId.classList.remove('slide-out-right');
+  })
+
+  imgElement.addEventListener("mouseleave", () => {
+    headingDataId.classList.remove('slide-in-right');
+    headingDataId.classList.add('slide-out-right');
+  })
+
+
+})
+
 document.addEventListener("click", (e) => {
   const elementTarget = e.target;
   
@@ -38,3 +59,17 @@ document.addEventListener("keydown", (e) => {
 })
 
 const playSoundEffect = audioElement => audioElement.play()
+
+// element.addEventListener("mousemove", (e) => {
+  //   nodeListHeadingsEl.forEach((headingElement) => {
+  //     headingElement.classList.add('slide-in-right');
+  //     headingElement.classList.remove('slide-out-right');
+  //   })
+  // })
+
+  // element.addEventListener("mouseout", (e) => {
+  //   nodeListHeadingsEl.forEach((headingElement) => {
+  //     headingElement.classList.add('slide-out-right');
+  //     headingElement.classList.remove('slide-in-right');
+  //   })
+  // })
