@@ -14,22 +14,7 @@ const rideCymbalSoundEffectEl = document.querySelector('#ride-cymbal-sound-effec
 const tomDrumSoundEffectEl = document.querySelector('#tom-sound-effect');
 const crashCymbalSoundEffectEl = document.querySelector('#crash-cymbal-sound-effect');
 const floorTomSoundEffectEl = document.querySelector('#floor-tom-sound-effect');
-
-// Animations settings
-const imgWrapperEl = document.querySelector(".img-wrapper");
-const headingEl = document.querySelector(".img-heading");
-
-// Mouse Over Event
-imgWrapperEl.addEventListener("mouseover", () => {
-  // headingEl.style.display = 'block';
-  headingEl.classList.add('text-focus-in');
-})
-
-// Mouse Out Event
-imgWrapperEl.addEventListener("mouseout", () => {
-  // headingEl.classList.remove('text-focus-in')
-})
-
+  
 document.addEventListener("click", (e) => {
   const elementTarget = e.target;
   
